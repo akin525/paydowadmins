@@ -104,13 +104,10 @@ exports.dashboard =  async (req, res) => {
 
         var request = require('request');
         var options = {
-            'method': 'POST',
-            'url': 'https://app2.mcd.5starcompany.com.ng/api/reseller/me',
+            'method': 'GET',
+            'url': 'https://pay.sammighty.com.ng/api/dashboard',
             'headers': {
-                'Authorization': 'mcd_key_yhij3dui0678iujk23hegwtfyu23dwky'
-            },
-            formData: {
-                'service': 'balance'
+                'apikey': 'sk-RwQM6hymqWCe43ct3esB'
             }
         };
 
@@ -134,7 +131,7 @@ exports.dashboard =  async (req, res) => {
                 allcharges:allcharges??0,
                 todaypurchase:todaypurchase??0,
                 todaydeposit:todaydeposit??0,
-                mcd:data.data.wallet,
+                mcd:data.user.wallet,
             });
         });
 
